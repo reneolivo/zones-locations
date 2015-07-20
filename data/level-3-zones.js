@@ -1,4 +1,4 @@
-define('/data/level-3-zones', function module() {
+define(function module() {
 	return [
 		[1,'Barreras',2],[2,'Barro Arriba',2],
 		[3,'Clavellina',2],[4,'Emma Balaguer Viuda Vallejo',2],[5,'Las Barías-La Estancia',2],

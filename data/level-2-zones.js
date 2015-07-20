@@ -1,4 +1,4 @@
-define('/data/level-2-zones', function module() {
+define(function module() {
 	return [
 		[1,'Distrito Nacional',5],[2,'Azua de Compostela',1],[3,'Estebanía',1],
 		[4,'Guayabal',1],[5,'Las Charcas',1],[6,'Las Yayas de Viajama',1],[7,'Padre Las Casas',1],

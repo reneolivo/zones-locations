@@ -10,8 +10,33 @@
 			<header id="main-header">
 				<h1>Zone Locations</h1>
 			</header>
+
+			<section id="main-content">
+				<section id="zones-list">
+					<h2>Zones</h2>
+
+					<table>
+						<thead>
+							<tr>
+								<th class="id">Id</th>
+								<th class="name">Name</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<!-- ko foreach: zones -->
+							<tr>
+								<td class="id" data-bind="text: $data[0]"></td>
+								<td class="name" data-bind="text: $data[1]"></td>
+							</tr>
+							<!-- /ko -->
+						</tbody>
+					</table>
+				</section>
+			</section>
 		</div>
 
-		<script type="text/javascript" src="bower_components/requirejs/require.js"></script>
+		<script type="text/javascript" data-main="app/main" src="bower_components/requirejs/require.js"></script>
+		<script type="text/javascript" src="app/config.js"></script>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-define('/data/level-1-zones', function module() {
+define(function module() {
 	return [
 		[1,'Azua'],[2,'Bahoruco'],[3,'Barahona'],[4,'Dajabón'],
 		[5,'Distrito Nacional'],[6,'Duarte'],[7,'Elías Piña'],
