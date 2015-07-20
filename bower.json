@@ -1,0 +1,28 @@
+{
+  "name": "zone-locations",
+  "version": "0.0.0",
+  "authors": [
+    "Rene Olivo <minet.ws@gmail.com>"
+  ],
+  "description": "zone locations finder using google maps api (hopefuly)",
+  "main": "index.html",
+  "keywords": [
+    "knockout",
+    "google",
+    "maps",
+    "zone",
+    "locations"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "~3.3.0",
+    "requirejs": "~2.1.19"
+  }
+}
