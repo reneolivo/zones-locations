@@ -18,7 +18,7 @@
 					<table>
 						<thead>
 							<tr>
-								<th class="id">Id</th>
+								<th class="level">Level</th>
 								<th class="name">Name</th>
 							</tr>
 						</thead>
@@ -26,8 +26,8 @@
 						<tbody>
 							<!-- ko foreach: zones -->
 							<tr>
-								<td class="id" data-bind="text: $data[0]"></td>
-								<td class="name" data-bind="text: $data[1]"></td>
+								<td class="level" data-bind="text: level"></td>
+								<td class="name" data-bind="text: name"></td>
 							</tr>
 							<!-- /ko -->
 						</tbody>
