@@ -15,7 +15,7 @@ require([
 
 		var ui = {
 			zones: zones,
-			selectedZone: ko.observable(),
+			selectedZone: ko.observable({}),
 
 
 			selectZone: function selectZone() {
