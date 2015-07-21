@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "knockout": "~3.3.0",
-    "requirejs": "~2.1.19"
+    "requirejs": "~2.1.19",
+    "requirejs-plugins": "~1.0.3"
   }
 }

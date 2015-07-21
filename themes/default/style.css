@@ -1,0 +1,14 @@
+#zones-list {
+	float: left;
+	width: 50%;
+}
+
+#zones-locations {
+	float: left;
+	width: 50%;
+}
+
+#zones-location-map {
+	width: 420px;
+	height: 380px;
+}

@@ -3,6 +3,8 @@
 <html>
 	<head>
 		<title>Zone Locations</title>
+
+		<link rel="stylesheet" type="text/css" href="themes/default/style.css" />
 	</head>
 
 	<body>
@@ -20,6 +22,7 @@
 							<tr>
 								<th class="level">Level</th>
 								<th class="name">Name</th>
+								<th class="view">View in map</th>
 							</tr>
 						</thead>
 
@@ -28,10 +31,19 @@
 							<tr>
 								<td class="level" data-bind="text: level"></td>
 								<td class="name" data-bind="text: name"></td>
+								<td class="view">
+									<button data-bind="click: $root.selectZone.bind($data)">View</button>
+								</td>
 							</tr>
 							<!-- /ko -->
 						</tbody>
 					</table>
+				</section>
+
+				<section id="zones-location">
+					<h2>Location</h2>
+
+					<div id="zones-location-map"></div>
 				</section>
 			</section>
 		</div>
