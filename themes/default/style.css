@@ -3,8 +3,10 @@
 	width: 50%;
 }
 
-#zones-locations {
-	float: left;
+#zones-location {
+	position: fixed;
+	right: 100px;
+	top: 100px;
 	width: 50%;
 }
 

@@ -11,6 +11,8 @@ require([
 
 		var geo = new google.maps.Geocoder();
 
+		var marker = null;
+
 		var ui = {
 			zones: zones,
 			selectedZone: ko.observable(),
@@ -23,11 +25,28 @@ require([
 
 				geo.geocode({
 						address: zone.name
-					}, function response(result, status) {
+					}, function response(results, status) {
 						if (status !== google.maps.GeocoderStatus.OK)
-							return alert('No address found');
+							return alert('Error: ' + status);
 
-						console.log(result);
+						if (results.length === 0)
+							return alert('address not found.')
+
+						if (marker !== null)
+							marker.setMap(null);
+
+						marker = new google.maps.Marker({
+							map: map,
+							draggable: false,
+							animation: google.maps.Animation.DROP,
+							position: new google.maps.LatLng(
+								results[0].geometry.location.A,
+								results[0].geometry.location.F
+							)
+						});
+
+						map.setCenter(marker.getPosition());
+						map.setZoom(14);
 					}
 				);
 			}
