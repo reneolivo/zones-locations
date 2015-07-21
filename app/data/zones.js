@@ -5,40 +5,44 @@ define([
 	], function module(zones1, zones2, zones3) {
 		var zones = [];
 
-		function findZoneChildren(zones, id) {
-			var children = [];
+		zonesToList(1, '', zones, [zones1, zones2, zones3]);
+
+		function zonesToList(level, append, zonesList, zonesArray) {
+			var zones = zonesArray.shift();
+
+			if (typeof zones === 'undefined')
+				return
+
+			for (var i in zones) {
+				var name = zones[i][1] + append;
+
+				zonesList.push({
+					name: name,
+					level: level
+				});
+
+				var nextZones = pluckOutZones(zonesArray[0], zones[i][0]);
+				zonesArray[0] = nextZones[0];
+				nextZones = nextZones[1];
+
+				var nextArray = [nextZones].concat(zonesArray.slice(1));
+
+				zonesToList(level + 1, ', ' + name, zonesList, nextArray);
+			}
+		}
+
+		function pluckOutZones(zones, id) {
+			var pluckedOut = [];
+			var keptIn = [];
 
 			for(var i in zones) {
 				if (zones[i][2] === id)
-					children.push(zones[i]);
+					pluckedOut.push(zones[i]);
+				else
+					keptIn.push(zones[i]);
 			}
 
-			return children;
-		}
-
-		for(var i in zones1) {
-			zones.push({
-				name: zones1[i][1],
-				level: 1
-			});
-
-			var filteredZones2 = findZoneChildren(zones2, zones1[i][0]);
-
-			for(var ii in filteredZones2) {
-				zones.push({
-					name: filteredZones2[ii][1] + ', ' + zones1[i][1],
-					level: 2
-				});
-
-				var filteredZones3 = findZoneChildren(zones3, filteredZones2[ii][0]);
-
-				for(var iii in filteredZones3) {
-					zones.push({
-						name: filteredZones3[iii][1] + ', ' + filteredZones2[ii][1] + ', ' + zones1[i][1],
-						level: 3
-					});
-				}
-			}
+			return [keptIn, pluckedOut];
 		}
 
 		return zones;
